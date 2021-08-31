@@ -20,13 +20,12 @@ class Level{
         pair<int, int> foodCoordinate;
 
     public:
-    
-        enum Directions{
-            WEST,
-            EAST,
-            SOUTH,
-            NORTH
-        };
+
+        Level(int l, int c, int totFood){
+            lines = l;
+            columns = c;
+            totalFood = totFood;
+        }
 
         void setLines(int lines){
             this->lines = lines;
@@ -47,6 +46,7 @@ class Level{
             return this->totalFood;
         }
 
+
         void addMazeLine(string line){
             maze.push_back(line);
         }
@@ -56,15 +56,17 @@ class Level{
             return maze;
         }
 
-        //<! futuramente vou armazenar em um vetor as coordenadas que estão livres no mapa(que possuem ' '). aí vou sortear um número de acordo com o tam desse vetor e colocar a fruta em tal coordenada. talvez mais eficiente?
-        void generateNewFood(){
-            srand(time(nullptr));
 
+        //<! futuramente vou armazenar em um vetor as coordenadas que estão livres no mapa(que possuem ' '). aí vou sortear um número de acordo com o tam desse vetor e colocar a fruta em tal coordenada. talvez mais eficiente?
+        void generateNewFood(vector<string> &maze_){
+            srand(time(nullptr));
+            
             while(true){
                 int l_tmp = rand()%lines ; int c_tmp = rand()%columns;
 
-                if(maze[l_tmp][c_tmp] == ' '){
-                    maze[l_tmp][c_tmp] = '@';
+                if(maze_[l_tmp][c_tmp] == ' '){
+                    maze_[l_tmp][c_tmp] = '@';
+                    cout << "COMIDA GErada NA COORDENADA (" << l_tmp << ',' << c_tmp << ") " << endl;
                     break;
                 }
             }

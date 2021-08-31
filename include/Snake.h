@@ -17,9 +17,12 @@ class Snake{
         int lives;
         int score;
         int FoodEaten;
+        int atualPosition; //guarda a posição que a cobra está virada
         // atualPosition;
+        int solStatus;
         vector<pair<int, int>> solution;
         vector<pair<int, int>> snake_body; //vector que possui as coordenadas de uma parte do corpo da cobra
+        pair<int, int> snake_coordinate;
     public:
 
         Snake(){
@@ -50,9 +53,13 @@ class Snake{
             solution.push_back(position);
         }
 
+        void setSnakeCoordinate(pair<int, int> snake_coordinate){
+            this->snake_coordinate = snake_coordinate;
+        }
+
 
         pair<int, int> getSnakeCoordinates(){
-            return make_pair(snake_body[0].first, snake_body[0].second);
+            return snake_coordinate;
         }
 
 
@@ -84,6 +91,7 @@ class Snake{
             }
         }
 
+
         pair<int, int> getPosition(int index){
             return solution[index];
         }
@@ -95,10 +103,7 @@ class Snake{
 
 
         bool sucessSolution(){
-            if(solution[solution.size()-1].first == -1){
-                return false;
-            }
-            return true;
+            return solStatus;
         }
 
 
@@ -121,15 +126,33 @@ class Snake{
             return FoodEaten;
         }
 
+        void setSolStatus(bool status){
+            solStatus = status;
+        }
 
-        // void setAtualPosition(Directions atualPosition){
-        //     this->atualPosition = atualPosition;
-        // }
+
+        void setAtualPosition(int atualPosition){
+            this->atualPosition = atualPosition;
+        }
 
 
-        // Directions getAtualPosition(){
-        //     return atualPosition;
-        // }
+        int getAtualPosition(){
+            return atualPosition;
+        }
+
+        bool jaVisitado(pair<int, int> coordinate){
+            for(int i=0; i < solution.size(); ++i){
+                if(solution[i].first == coordinate.first && solution[i].second == coordinate.second)
+                    return true;
+            }
+            return false;
+        }
+
+        void printSol(){
+            for(int i=0; i < solution.size(); ++i){
+                cout << solution[i].first << " " << solution[i].second << endl;
+            }
+        }
 };
 
 #endif //Snake_h
