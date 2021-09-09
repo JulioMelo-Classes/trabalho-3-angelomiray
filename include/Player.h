@@ -97,8 +97,9 @@ class Player{
             
             cout << "pos " << snake_coordinate.first <<' ' <<  snake_coordinate.second << endl;
 
+            srand(time(nullptr)); //quando vc usa srand dentro do while é possível que o programa fique em loop
+            
             while(true){
-                srand(time(nullptr));
                 Directions nm = next_move(); //pegou a pos
                 //cout << "nm: " << nm << endl;
                 if((nm == NORTH) && (atualPosition != SOUTH)){ //se for pra norte, verifica se não há nada na frente e vai...

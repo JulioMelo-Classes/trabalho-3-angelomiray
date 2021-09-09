@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/snaze.dir/src/SnakeGame.cpp.o CMakeFiles/snaze.dir/src/Snaze.cpp.o  -o snaze 

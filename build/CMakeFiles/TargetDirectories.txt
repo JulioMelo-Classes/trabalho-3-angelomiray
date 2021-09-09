@@ -1,3 +1,0 @@
-/home/runner/CP1-Snaze/LP1-Snaze/build/CMakeFiles/rebuild_cache.dir
-/home/runner/CP1-Snaze/LP1-Snaze/build/CMakeFiles/snaze.dir
-/home/runner/CP1-Snaze/LP1-Snaze/build/CMakeFiles/edit_cache.dir
