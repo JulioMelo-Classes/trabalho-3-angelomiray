@@ -1,0 +1,3 @@
+/home/runner/ConstantYearlyRatio/LP1-SemDoc/build/CMakeFiles/rebuild_cache.dir
+/home/runner/ConstantYearlyRatio/LP1-SemDoc/build/CMakeFiles/snaze.dir
+/home/runner/ConstantYearlyRatio/LP1-SemDoc/build/CMakeFiles/edit_cache.dir
